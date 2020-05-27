@@ -12,6 +12,8 @@ It uses the QML port of qtermwidget (Konsole) developed by me: https://github.co
 
 This terminal emulator works under Linux and macOS and requires Qt 5.2 or higher.
 
+Settings such as colors, fonts, and effects can be accessed via context menu.
+
 ## Screenshots
 ![Image](<https://i.imgur.com/TNumkDn.png>)
 ![Image](<https://i.imgur.com/hfjWOM4.png>)
@@ -32,24 +34,13 @@ Users of **openSUSE** can grab a package from [Open Build Service](http://softwa
 
 **Arch** users can install this [package](https://aur.archlinux.org/packages/cool-retro-term-git/) directly via the [AUR](https://aur.archlinux.org):
 
-    yaourt -S aur/cool-retro-term-git
+    trizen -S aur/cool-retro-term-git
 
 or use:
 
     pacman -S cool-retro-term
 
 to install precompiled from community repository.
-
-**Gentoo** users can now install the fourth release "1.1.1" from a 3rd-party repository preferably via layman:
-
-    USE="git" emerge app-portage/layman
-    wget https://www.gerczei.eu/files/gerczei.xml -O /etc/layman/overlays/gerczei.xml
-    layman -f -a qt -a gerczei # those who've added the repo before 27/08/17 should remove, update and add it again as its source has changed
-    ACCEPT_KEYWORDS="~*" emerge =x11-terms/cool-retro-term-1.1.1::gerczei
-
-The live ebuild (version 9999-r1) tracking the bleeding-edge WIP codebase also remains available.
-
-A word of warning: USE flags and keywords are to be added to portage's configuration files and every emerge operation should be executed with '-p' (short option for --pretend) appended to the command line first as per best practice!
 
 Users of **Ubuntu 14.04 LTS (Trusty) up to 15.10 (Wily)** can use [this PPA](https://launchpad.net/~bugs-launchpad-net-falkensweb).
 
@@ -108,6 +99,12 @@ Make sure to install these first.
 **Ubuntu 17.10**
 
     sudo apt-get install build-essential qml-module-qtgraphicaleffects qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings qml-module-qtquick-controls qml-module-qtquick-dialogs qmlscene qt5-default qt5-qmake qtdeclarative5-dev qtdeclarative5-localstorage-plugin qtdeclarative5-qtquick2-plugin qtdeclarative5-window-plugin
+
+---
+
+**snapcraft (most of distros)**
+
+    sudo snap install cool-retro-term --classic
 
 ---
 
@@ -200,6 +197,12 @@ cd cool-retro-term
 mkdir cool-retro-term.app/Contents/PlugIns
 cp -r qmltermwidget/QMLTermWidget cool-retro-term.app/Contents/PlugIns
 open cool-retro-term.app
+```
+
+**Homebrew**
+
+```sh
+brew cask install cool-retro-term
 ```
 
 ## Donations
